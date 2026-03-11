@@ -1,0 +1,16 @@
+class Solution:
+    def pushZerosToEnd(self, arr):
+        # last_non_zero tracks where the next non-zero element should go
+        last_non_zero = 0
+        
+        # Traverse the array
+        for i in range(len(arr)):
+            # If current element is non-zero
+            if arr[i] != 0:
+                # Swap it with the element at last_non_zero
+                arr[i], arr[last_non_zero] = arr[last_non_zero], arr[i]
+                # Increment the pointer
+                last_non_zero += 1
+        
+        return arr
+
